@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Habit Tracker PWA</title>
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- CSS: base + one theme file (light by default) -->
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="light.css" id="theme-link" />
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- canvas-confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <meta name="theme-color" content="#4CAF50" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Habit Tracker</h1>
+      <div class="header-controls">
+        <select id="theme-switcher" title="Pick theme (loads separate CSS)">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+
+        <input type="color" id="accent-picker" title="Pick accent color" />
+
+        <button id="install-btn" class="btn" hidden>Install App</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="top-row">
+        <div class="quote-box">
+          <div id="quote">"Loading inspirational quote..."</div>
+          <div id="quote-author"></div>
+        </div>
+
+        <div class="add-panel card">
+          <input id="habit-input" placeholder="Add new habit (e.g., Drink Water)" />
+          <button id="add-btn" class="btn">Add</button>
+          <div class="small-controls">
+            <button id="export-btn" class="btn">Export</button>
+            <label class="btn file-btn">
+              Import
+              <input id="import-file" type="file" accept=".json" />
+            </label>
+            <button id="clear-btn" class="btn danger">Clear All</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="habit-list" class="habit-list"></section>
+
+      <section class="stats card">
+        <h3>Weekly Progress</h3>
+        <canvas id="weeklyChart" width="400" height="160"></canvas>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>Works offline • Data saved locally</small>
+      <div id="status"></div>
+    </footer>
+  </div>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+  <script src="pwa.js"></script>
+</body>
+</html>
+    

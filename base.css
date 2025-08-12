@@ -1,0 +1,103 @@
+:root{
+  --bg: #ffffff;
+  --text: #111111;
+  --card: #f6f6f6;
+  --accent: #4CAF50;
+  --muted: #777;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:12px;
+}
+
+.app{
+  max-width:900px;
+  margin:12px auto;
+}
+
+.app-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.header-controls{display:flex;gap:8px;align-items:center}
+h1{margin:0;font-size:1.4rem}
+
+.card{
+  background:var(--card);
+  padding:12px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.04);
+}
+
+.top-row{
+  display:flex;
+  gap:12px;
+  margin-bottom:12px;
+  align-items:flex-start;
+}
+
+.quote-box{
+  flex:1;
+  padding:14px;
+  border-radius:8px;
+}
+.quote-box #quote{font-style:italic;margin-bottom:8px}
+.quote-box #quote-author{font-weight:600;color:var(--muted)}
+
+.add-panel{
+  width:320px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.add-panel input{
+  padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.08);
+}
+
+.small-controls{display:flex;gap:8px;flex-wrap:wrap}
+
+.btn{
+  padding:8px 10px;border-radius:8px;border:none;background:var(--accent);color:#fff;cursor:pointer;
+}
+.btn:hover{opacity:0.95}
+.danger{background:#e04f4f}
+
+.file-btn input{display:none}
+
+.habit-list{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+
+.habit{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  padding:10px;border-radius:8px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+.habit-left{display:flex;align-items:center;gap:12px}
+.habit-title{font-weight:600}
+.habit-meta{font-size:0.85rem;color:var(--muted)}
+
+.habit-actions{display:flex;gap:8px;align-items:center}
+.habit-actions button{padding:6px 8px;border-radius:8px;border:none;cursor:pointer}
+
+.done .habit-title{opacity:0.6;text-decoration:line-through}
+
+.stats{margin-top:12px}
+
+.app-footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+#status{font-size:0.9rem}

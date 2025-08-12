@@ -1,0 +1,8 @@
+:root{
+  --bg: #0b1020;
+  --text: #e6eef8;
+  --card: #0f1724;
+  --accent: #16a34a;
+  --muted: #9aa6b2;
+}
+body{background:linear-gradient(180deg,#071025 0%, #0b1020 100%); color:var(--text)}
